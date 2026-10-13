@@ -1,0 +1,134 @@
+<?php
+    include("conexion.php")
+
+    $con = conectar();
+
+    $sql = "SELECT * FROM alumnos";
+
+    $query = mysqli_query($con, $sql);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0; padding: 40px 0; background-color: #e0e0e0, font-family: 'Times New Roman', Times, serif;">
+    
+    <div class="ex" style="max-width: 800px; margin: 0 auto; box-shadow: 0 4px 15px rgba(136, 96, 96, 0.15);">
+        <header class="encabezado" style="display: flex; background-color: rgb(228, 222, 108); align-items: center;">
+            <div class="informacion-personal" style="text-align: center; color: black;">
+                <h2 style="font-weight: bold; margin-bottom: 10px;">EXAMEN 1ER PARCIAL - APLICACIONES WEB</h2>
+                </div>
+            </header>
+        
+        <main class="contenido" style="display: grid; grid-template-columns: 35% 65%;">
+
+            <div class="columna-izquierda" style="padding: 20px; background-color: rgb(209, 156, 109);">
+                
+                <div class="formulario">
+                    <h4 style="font-weight: bold; margin-bottom: 10px;">Formulario</h4>
+                    <ul style="padding-left: 20px;">
+                        <li>Nombre producto</li>
+                        <li>Marca</li>
+                        <li>Stock</li>
+                        <li>Precio</li>
+                    
+                    </ul>
+                </div>
+            </div>
+            <div class="columna-derecha" style="padding: 20px; background-color: rgb(196, 240, 216);">
+                <section>
+                    <h4 style="font-weight: bold; margin-bottom: 10px;">TABLA DE PRODUCTOS</h4>
+                    <body>
+    <div>
+        <font size = "+10"> TABLA DE ALUMNOS </font size = "+10">
+        <br>
+        <table border = "2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>MARCA</th>
+                    <th>STOCK</th>
+                    <th>PRECIO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    while($row=mysqli_fetch_array($query)){
+                ?>
+                 <tr>
+                        <td><?php echo $row['id']?></td>
+                        <td><?php echo $row['nombre']?></td>
+                        <td><?php echo $row['marca']?></td>
+                        <td><?php echo $row['stock']?></td>
+                        <td><?php echo $row['precio']?></td>
+                </tr>
+                <?php
+                    }
+                ?>
+            </tbody>
+        </table>
+</div>
+<div>
+    <h1>Formulario</h1>
+
+    <from action="insertar.php" method="POST">
+
+        <div style="display: flex; gap: 10px;">
+
+            <input type="text"
+                class="form-control"
+                name="id"
+                placeholder="ID">
+
+            <input type="text"
+                class="form-control"
+                name="nombre"
+                placeholder="Nombre">
+
+            <input type="text"
+                class="form-control"
+                name="marca"
+                placeholder="Marca">
+
+            <input type="text"
+                class="form-control"
+                name="stock"
+                placeholder="Stock">
+
+            <input type="text"
+                class="form-control"
+                name="precio"
+                placeholder="Precio">
+            
+            <button type="submit">Guardar</button>
+        </div>
+     </section>
+   </div>
+</main>
+    </div>
+        </div>
+    </from>
+</di>
+<a href="C:\Users\Desktop\OneDrive\Documentos\APPS WEB\R1 - Introducción a Git y GitHub.pdf"></a>
+<a href="C:\Users\Desktop\OneDrive\Documentos\APPS WEB\R2 - HTML + CSS + Box Model.pdf"></a>
+<a href="C:\Users\Desktop\OneDrive\Documentos\APPS WEB\R3 - Grid y Flex.pdf"></a>
+<div class="cv" style="max-width: 800px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);">
+        <header class="encabezado" style="display: flex; background-color: rgb(143, 75, 238); align-items: center;">
+            <div class="foto">
+                <img src="C:\xampp\htdocs\AW_TIID222\img\chico.jpg" alt="" style="width: 120px; padding: 30px 50px 30px; border-radius: 120px;">   
+            </div>
+            <div class="UPQ" style="text-align: center; color: black;">
+                <h2 style="font-weight: bold; margin-bottom: 10px;">Wendy Montserrat Torres Terrazas</h2>
+                <h2 style="font-weight: bold;">Solo puedo decir que me anda consumiendo la vida</h2>
+            </div>
+        </header>
+
+</body>
+</html>
+
+        
