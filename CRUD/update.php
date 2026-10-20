@@ -19,7 +19,7 @@
     <title>Editar alumnos</title>
 </head>
 <body>
-    <h1>Formulario</h1>
+    <h1>Actualizar</h1>
 
             <form action="actualizar.php" method="POST">
 
