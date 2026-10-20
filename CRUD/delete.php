@@ -20,5 +20,4 @@ if ($query) {
     echo "Error al eliminar el alumno: " . mysqli_error($con);
 }
 
-
 ?>
