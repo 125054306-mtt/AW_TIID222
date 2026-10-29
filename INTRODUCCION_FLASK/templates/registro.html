@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,9 @@
     <title>Registro</title>
 </head>
 <body>
-    <di>
+    <div>
         <h1>REGISTRO</h1>
-        <form action="">
+        <form action="/registro" method="POST">
             <label>Nombre(s):</label>
             <input type="text" name="nombre" required>
             <br><br>
@@ -22,16 +23,16 @@
             <input type="text" name="correo" required>
             <br><br>
             <label>Contraseña:</label>
-            <input type="text" name="contraseña" required>
+            <input type="text" name="password" required>
             <br><br>
-            <label>id_rol:</label>
+            <label for="id_rol">Tipo de usuario</label>
                 <select name="id_rol" id="id_rol" required>
                     <option value="1">Administrador</option>
                     <option value="2">Usuario X</option>
                 </select>
-                <button type="submit">Registrarse</button>
+            <button type="submit">Registrarse</button>
         </form>
-        <p><a href="{{ url_for('login')}}">Regresar al login</a></p>
-    </di>
+        <a href="{{ url_for('home') }}">Regresar al login</a>
+    </div>
 </body>
 </html>
