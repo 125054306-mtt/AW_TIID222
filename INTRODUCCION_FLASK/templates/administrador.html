@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador</title>
-</head>
-<body>
-    Este es el de administrador
-</body>
-</html>
+<!-- HEREDAR LA PLANTILLA -->
+{% extends 'navbar_footer.html' %} 
+
+{% block title %} 
+Panel de administrador
+{% endblock %}
+
+<!-- CONTENIDO DE LA PLANTILLA -->
+{% block content %} 
+<div class="max-w-4xl mx-auto my-8">
+    <div class="card bg-base-100 shadow-xl border border-base-300">
+        <div class="card-body">
+            <div class="flex items-center gap-2">
+                <span class="badge badge-primary">Administrador</span>
+            </div>
+            <h1 class="card-title text-3xl font-bold mt-2">
+                Bienvenido, {{ nombre }}!
+            </h1>
+            <p class="mt-4">
+                Este es el contenido del administrador
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
