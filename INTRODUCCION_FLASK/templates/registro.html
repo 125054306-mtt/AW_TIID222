@@ -1,38 +1,39 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div>
-        <h1>REGISTRO</h1>
+    <div  style="width: 500px; margin: 0 auto; padding-top: 80px;">
+        <h1>Registrar usuario</h1>
         <form action="/registro" method="POST">
             <label>Nombre(s):</label>
-            <input type="text" name="nombre" required>
+            <input type="text" name="nombre" placeholder="Nombre" required>
             <br><br>
             <label>Apellido paterno:</label>
-            <input type="text" name="apellido_p" required>
+            <input type="text" name="apellido_p" placeholder="Apellido paterno" class="input input-warning"  required>
             <br><br>
-            <label>Apellido materno:</label>
-            <input type="text" name="apellido_m" required>
+            <label>Apellido Materno:</label>
+            <input type="text" name="apellido_m" placeholder="Apellido materno" class="input input-warning"  required>
             <br><br>
             <label>Correo:</label>
-            <input type="text" name="correo" required>
+            <input type="email" name="correo" placeholder="Correo" class="input input-warning"  required>
             <br><br>
             <label>Contraseña:</label>
-            <input type="text" name="password" required>
+            <input type="password" name="password" placeholder="Contraseña" class="input input-warning"  required>
             <br><br>
-            <label for="id_rol">Tipo de usuario</label>
-                <select name="id_rol" id="id_rol" required>
+            <label for="id_rol">Tipo de usuario:</label>
+                <select name="id_rol" id="id_rol" class="input input-warning"  required>
+                    <option value="2">Usuario</option>
                     <option value="1">Administrador</option>
-                    <option value="2">Usuario X</option>
                 </select>
-            <button type="submit">Registrarse</button>
+                <br><br>
+            <button type="submit" class="btn btn-dash btn-secondary">Registrarme</button>
         </form>
-        <a href="{{ url_for('home') }}">Regresar al login</a>
+          <p><a href="{{ url_for('login') }}">Volver al inicio de sesión</a></p>
     </div>
-</body>
+</body>  
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </html>
