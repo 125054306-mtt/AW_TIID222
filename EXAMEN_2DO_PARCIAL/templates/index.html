@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Autos</title>-
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-base-200 min-h-screen p-6">
+
+    <div class="card bg-base-100 shadow-xl p-6">
+        <h1 class="text-3xl font-bold text-center">GESTION DE AUTOS</h1>
+
+        {% with mensajes = get_flashed_messages() %}
+            {% if mensajes %}
+                {% for msj in mensajes %}
+                    <h3>{{ msj }}</h3>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div>
+            <form action="/guardar" method="post" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <input type="text" name="txtMarca" placeholder="Marca del carro" class="input input-bordered w-full">
+                <input type="text" name="txtModelo" placeholder="Modelo del carro" class="input input-bordered w-full">
+                <input type="text" name="txtAnio" placeholder="Año del carro" class="input input-bordered w-full">
+                <button class="btn btn-outline btn-secondary">Guardar</button>
+            </form>
+        </div>
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Id: </td>
+                        <td>Marca: </td>
+                        <td>Modelo: </td>
+                        <td>Año del carro: </td>
+                        <td>Acciones:</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for alb in listAutos %}
+                    <tr>
+                        <td>{{alb.0}}</td>
+                        <td>{{alb.1}}</td>
+                        <td>{{alb.2}}</td>
+                        <td>{{alb.3}}</td>
+                        <td class="space-x-2">
+                            <a href="/editar/{{alb.0}}" class="btn btn-outline">Editar</a>
+                            <a href="/eliminar/{{alb.0}}" class="btn btn-dash btn-error">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
