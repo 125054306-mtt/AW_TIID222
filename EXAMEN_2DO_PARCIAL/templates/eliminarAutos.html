@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Auto</title>
+</head>
+<body>
+    <div>
+        <h1>Auto a eliminar</h1>
+        <form action="/eliminar/{{ Auto.0 }}" method="POST">
+            <input type="text" name="txtMarca" value="{{ Auto.1 }}" readonly>
+            <input type="text" name="txtModelo" value="{{ Auto.2 }}" readonly>
+            <input type="number" name="txtAnio" value="{{ Auto.3 }}" readonly>
+            <button type="submit" onclick="return Eliminar()">Eliminar</button>
+            <button type="button" onclick="Regresar()">Regresar</button>
+        </form>
+
+        <script>
+            function Eliminar() {
+                return confirm("¿Estás seguro de que deseas eliminar este auto?");
+            }
+            function Regresar() {
+                window.location.href = "{{ url_for('index') }}";
+            }
+        </script>
+    </div>
+</body>
+</html>
